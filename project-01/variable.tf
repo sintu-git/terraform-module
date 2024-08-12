@@ -25,12 +25,40 @@ variable "instance_type_list" {
 }
 
 #variable for tags
-variable "tags" {
+variable "ec2-tags" {
   description = "tags for instance name"
   type        = map(string)
   default = {
     dev  = "Development"
     qa   = "Acceptance"
     prod = "Production"
+  }
+}
+
+#create vpc id
+variable "vpc" {
+  description = "creating vpc for"
+  type = list(string)
+  default = ["192.168.0.0/16", "10.0.0.0/16"]
+}
+
+variable "subnet" {
+  description = "creating subnet"
+  type = list(string)
+  default = ["192.168.1.0/24", "192.168.2.0/24", "192.168.4.0/24"]
+}
+
+variable subnet-tags {
+  description = "taging for subnet"
+  type = list(string)
+  default = ["private-subnet", "my-subnet", "subnet-1"]
+}
+
+variable vpc-tags {
+  description = "taging for vpc"
+  type = map(string)
+  default = {
+   dev = "my-terr-vpc"
+   qa = "Acceptance-vpc"    
   }
 }

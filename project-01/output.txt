@@ -1,0 +1,23 @@
+#output for all resource
+output "publicIP" {
+  value = aws_instance.project01.public_ip
+}
+
+output "privateIP" {
+    value = aws_instance.project01.private_ip
+}
+
+output "public-IP" {
+  value = aws_instance.project-01.public_ip
+}
+
+output "private-IP" {
+    value = aws_instance.project-01.private_ip
+}
+output "public_IP" {
+  value = aws_instance.project_01.public_ip
+}
+
+output "private_IP" {
+    value = aws_instance.project_01.private_ip
+}
